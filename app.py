@@ -55,12 +55,16 @@ elecionesin=["naces blanco","naces negro"]
 # Ruta principal
 @app.route('/')
 def home():
-    if 'usuario' not in session:
-       
-        return redirect("/login")
-    else:
-      
-        return render_template("index.html")
+    return render_template("index.html")
+@app.route('/bot')
+def bot():
+    return render_template('bot.html')
+@app.route('/edu')
+def edu():
+    return render_template('p-edu.html')
+@app.route('/user')
+def user():
+    return render_template('usuario.html')
 
 @app.route('/login')
 def log():

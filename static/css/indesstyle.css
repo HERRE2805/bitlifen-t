@@ -1,89 +1,165 @@
-*{
+/* Reset de Estilos */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url("../media/fondoinicio.gif   ") ;
-}
-.wrapper{
-    width:420px;
-    background:transparent;
-    border: 2px solid rgba(255,255,255,.2);
-    background-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
 
-    color: #fff;
+/* Estilo del Cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0; /* Elimina el flexbox en el body */
+}
+
+/* Contenedor del Carrusel */
+.carousel-container {
+    width: 100%;
+    max-width: 900px; /* Ajusta según tus necesidades */
+    margin: 20px auto; /* Margen superior para separar de la barra */
+    overflow: hidden;
     border-radius: 10px;
-    padding: 30px 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background-color: #f4f4f4; /* Fondo por defecto */
+    position: relative;
+    z-index: 1; /* Asegura que el carrusel no se superponga a la barra */
+}
 
-}
-.wrapper h1{
-    font-size: 36px;
-    text-align: center;
-    
-} 
-.wrapper .input-box{
-    width: 100%;
-    height: 50px;
-   
-    margin: 30px 0;
-}
-.input-box input{
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    border: none;
-    outline: none;
-    padding: 0 10px;
-    border: 2px solid rgba(255,255,255,.2);
-    border-radius: 40px;
-    color: #fff;
-    font-size: 18px;
-    padding: 20px 45px 20px 20px;
-    
-}
-.input-box input::placeholder{
-    color: #fff;
-}
-.input-box i{
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    right: 15px;
-    color: #fff;
-}
-.wrapper .remember-forgot{
+/* Diapositivas del Carrusel */
+.carousel-slide {
     display: flex;
-    justify-content: space-between;
-    font-size: 14.5px;
-    margin: -15px 0  15px;
+    transition: transform 0.5s ease-in-out;
 }
-.wrapper .remember-forgot a{
-    color: #fff;
-    text-decoration: none;
+
+.slide {
+    min-width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
-.wrapper .remember-forgot a:hover{
-    text-decoration: underline;
+
+/* Bloque de Texto */
+.text-block {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 60%;
 }
-.wrapper .btn{
-    width: 98%;
-    height: 45px;
-    background: #fff;
+
+/* Encabezado y Párrafo */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Botón de Llamada a la Acción */
+.cta-button {
+    background-color: #007bff;
+    color: white;
     border: none;
-    border-radius: 40px;
-    outline: none;
-    box-shadow: 0 0px 10px rgba(0,0,0,.1);
+    padding: 10px 20px;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 16px;
-    color: #333;
-    font-weight: 600;
-    
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+/* Custom Image Style */
+.custom-img {
+    max-width: 100%; /* Ensure images fit within the carousel */
+    height: 400px; /* Adjust to your desired height */
+    object-fit: cover; /* Maintain the image aspect ratio while filling the height */
+    display: block;
+    margin: 0 auto;
+}
+
+/* Carousel Container */
+.carousel-inner {
+    width: 100%; /* Make sure the carousel container fills the page width */ /* Optional: limit the width of the carousel if needed */
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Sección Info */
+#info {
+    background-color: #f8f9fa; /* Fondo suave para todo el contenedor */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.feature {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #ffffff;
+    background-color: #007bff; /* Color de fondo del icono */
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.icon-link {
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.icon-link:hover {
+    color: #0056b3;
+}
+
+.icon-link svg {
+    width: 16px;
+    height: 16px;
+}
+
