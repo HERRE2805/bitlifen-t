@@ -64,7 +64,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #007bff;
+    background-color: #82b7f0;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -74,7 +74,7 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #65b0ff;
 }
 
 /* Historial de Salud */
@@ -110,7 +110,7 @@ footer {
 }
 
 .bg-primary {
-    background-color: #538fcc !important; /* Azul más oscuro */
+    background-color: #86bdf5 !important; /* Azul más oscuro */
 }
 
 .text-white {

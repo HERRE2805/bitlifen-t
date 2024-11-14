@@ -4,37 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información Educativa</title>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"></head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/p-edu.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <body>
     <div>
         {% include 'barra.html' %}
         {% block content %}
         {% endblock %}
-    </div>
-    <div class="container mt-5">
-        <section id="prevencion">
-            <h3>Consejos para la Prevención</h3>
-            <p>Mantén una dieta equilibrada y haz ejercicio regularmente.</p>
+        <section class="sustainability-section">
+            <div class="container">
+                <h1>Avances tecnológicos en la detección y prevención de paros cardíacos</h1>
+                <p>La innovación tecnológica ha impulsado el desarrollo de dispositivos avanzados, como monitores cardíacos portátiles y sensores inteligentes, que permiten el seguimiento en tiempo real de las señales vitales de los usuarios. Estos dispositivos ayudan a identificar patrones anormales en el ritmo cardíaco y emiten alertas inmediatas a los usuarios y a los profesionales de la salud.</p>
+                <div class="objectives-grid">
+                    <div class="objective-card">
+                        <i class="fas fa-heartbeat icon"></i>
+                        <h3>Impacto del bienestar cardiovascular en la vida acuática</h3>
+                        <p>La conexión entre la salud humana y el medio ambiente es crucial. Proteger el medio ambiente y las fuentes de agua limpia es esencial para reducir factores de riesgo cardíacos a largo plazo. Además, el ejercicio acuático es una recomendación efectiva para el corazón.</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-user-md icon"></i>
+                        <h3>Estrategias para prevenir paros cardíacos</h3>
+                        <p>Las estrategias incluyen una dieta equilibrada, ejercicio regular y el manejo del estrés. Realizar chequeos médicos periódicos y conocer técnicas de RCP y uso de DEA puede salvar vidas en emergencias.</p>
+                    </div>
+                    <div class="objective-card">
+                        <i class="fas fa-dumbbell icon"></i>
+                        <h3>Hábitos diarios para fortalecer el corazón</h3>
+                        <p>Adoptar hábitos saludables como una buena alimentación, ejercicio diario y evitar el tabaco ayuda a mantener el corazón fuerte. Practicar técnicas de relajación también reduce el estrés y mejora la salud cardiovascular.</p>
+                    </div>
+                </div>
+            </div>
         </section>
-
-        <section id="primerosAuxilios" class="mt-5">
-            <h3>Qué Hacer en Caso de Emergencia</h3>
-            <p>Sigue estos pasos de primeros auxilios si alguien tiene un ataque cardíaco.</p>
+        <section>
+            <div class="chart-container">
+                <h1 style="text-align: center;">Casos actuales</h1>
+                <canvas id="heartAttackChart"></canvas>
+            </div>
         </section>
-
-        <section id="habitos" class="mt-5">
-            <h3>Hábitos Saludables</h3>
-            <p>Evita el tabaco y reduce el estrés para proteger tu corazón.</p>
-        </section>
-    </div>
-
-    <footer class="bg-light text-center py-3 mt-5">
-        <p>&copy; 2024 Sistema de Prevención de Ataques Cardíacos</p>
-    </footer>
+        <footer class="bg-dark text-white text-center py-3 mt-5">
+            <p>&copy; 2024 Sistema de Prevención de Ataques Cardíacos</p>
+        </footer>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/grafic.js') }}"></script>
 </body>
 </html>

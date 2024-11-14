@@ -7,106 +7,90 @@
 
 /* Estilo del Cuerpo */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: #f4f4f4;
-    margin: 0; /* Elimina el flexbox en el body */
+    margin: 0;
+    padding-top: 60px; /* Espacio para la barra de navegación fija */
 }
 
-/* Contenedor del Carrusel */
-.carousel-container {
+/* Barra de Navegación */
+.bar-container {
+    position: fixed;
+    top: 0;
     width: 100%;
-    max-width: 900px; /* Ajusta según tus necesidades */
-    margin: 20px auto; /* Margen superior para separar de la barra */
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    background-color: #f4f4f4; /* Fondo por defecto */
-    position: relative;
-    z-index: 1; /* Asegura que el carrusel no se superponga a la barra */
+    background-color: #fff;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Diapositivas del Carrusel */
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    height: 400px;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-/* Bloque de Texto */
-.text-block {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    padding: 20px;
+/* Sección Estilizada */
+.stylized-section {
+    background-color:  #438fb3;; /* Color de fondo suave */
+    border-radius: 20px;
+    padding: 50px 20px;
     text-align: center;
-    border-radius: 5px;
-    max-width: 60%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 1000px; /* Ancho máximo de la sección */
 }
 
-/* Encabezado y Párrafo */
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color:  #006494;
+    margin-bottom: 15px;
+    font-family: 'Arial', sans-serif;
 }
 
 p {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: #080808;
+    margin-bottom: 25px;
+    font-family: 'Verdana', sans-serif;
 }
 
-/* Botón de Llamada a la Acción */
-.cta-button {
-    background-color: #007bff;
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.video-container iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Para hacer el video responsivo */
+}
+
+.action-button {
+    background-color:  #006494;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 12px 30px;
     font-size: 1rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 20px;
     transition: background-color 0.3s;
+    font-family: 'Verdana', sans-serif;
 }
 
-.cta-button:hover {
-    background-color: #0056b3;
-}
-/* Custom Image Style */
-.custom-img {
-    max-width: 100%; /* Ensure images fit within the carousel */
-    height: 400px; /* Adjust to your desired height */
-    object-fit: cover; /* Maintain the image aspect ratio while filling the height */
-    display: block;
-    margin: 0 auto;
-}
-
-/* Carousel Container */
-.carousel-inner {
-    width: 100%; /* Make sure the carousel container fills the page width */ /* Optional: limit the width of the carousel if needed */
-    margin: 0 auto; /* Center the carousel horizontally */
-}
-
-/* General Reset */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.action-button:hover {
+    background-color:  #006494;
 }
 
 /* Sección Info */
 #info {
-    background-color: #f8f9fa; /* Fondo suave para todo el contenedor */
+    background-color: #f8f9fa;
     padding: 40px 20px;
     text-align: center;
 }
 
+/* Estilo de las Características */
 .feature {
     background-color: #ffffff;
     border-radius: 10px;
@@ -128,7 +112,7 @@ p {
     justify-content: center;
     font-size: 24px;
     color: #ffffff;
-    background-color: #007bff; /* Color de fondo del icono */
+    background-color: #007bff;
     margin-bottom: 20px;
 }
 
@@ -136,12 +120,6 @@ h3 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #333;
-}
-
-p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
 }
 
 .icon-link {
@@ -162,4 +140,3 @@ p {
     width: 16px;
     height: 16px;
 }
-

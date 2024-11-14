@@ -11,27 +11,17 @@
     <div class="bar-container">
         {% include 'barra.html' %}
     </div>
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="../static/media/image.png" class="custom-img" class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../static/media/CAR2.png" class="custom-img"class="d-block w-100 " alt="...">
-            </div>
-            <div class="carousel-item">
-                <img src="../static/media/CAR3.png" class="custom-img"class="d-block w-100 " alt="...">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
+
+    <section class="stylized-section">
+      <div class="content-wrapper">
+          <h2>Bienvenido a Nuestra Plataforma</h2>
+          <p>Explora contenido educativo y mantente informado sobre temas importantes.</p>
+          <div class="video-container">
+              <iframe width="100%" height="315" src="https://www.youtube.com/embed/video_id" title="Video informativo" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <button class="action-button">Ver más contenido</button>
+      </div>
+  </section>
 
 
     <section id="info">
@@ -42,7 +32,7 @@
                     <path fill-rule="evenodd" d="M0 0h1v15h15v1H0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5"/>
                   </svg>              </div>
               <h3 class="fs-2 text-body-emphasis">Proyeccion</h3>
-              <p>El Sistema de Prevención de Ataques Cardíacos se dedica a fomentar hábitos saludables y prácticas preventivas para reducir el riesgo de emergencias cardíacas. A través de monitoreo en tiempo real y alertas personalizadas, el sistema ayuda a los usuarios a identificar señales de advertencia y actuar de manera proactiva, priorizando la salud del corazón y la prevención de problemas mayores</p>
+              <p >El Sistema de Prevención de Ataques Cardíacos se dedica a fomentar hábitos saludables y prácticas preventivas para reducir el riesgo de emergencias cardíacas. A través de monitoreo en tiempo real y alertas personalizadas, el sistema ayuda a los usuarios a identificar señales de advertencia y actuar de manera proactiva, priorizando la salud del corazón y la prevención de problemas mayores</p>
               <a href="#" class="icon-link">
                 Call to action
                 <svg class="bi bi-backpack2"><use xlink:href="#chevron-right"></use></svg>
@@ -79,10 +69,7 @@
             </div>
           </div>
     </section>
-    
-    <div class="bar-container">
-        {% include 'fot.html' %}
-    </div>
+  
 
     <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/user.js') }}"></script>
