@@ -8,7 +8,7 @@
 /* Estilo del Cuerpo */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #d0e7f9; /* Cambiado a un azul claro */
     margin: 0;
     color: #333;
 }
@@ -17,13 +17,13 @@ body {
 
 /* Sección Estilizada */
 .stylized-section {
-    background-color: #438fb3;
+    background-color: #C9E6F0;
     border-radius: 15px;
-    padding: 50px 30px;
+    padding: 20px 10px;
     text-align: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     margin: 30px auto;
-    max-width: 1200px;
+    max-width: 600px;
 }
 
 .content-wrapper {
@@ -79,7 +79,7 @@ p {
 
 /* Estilo de las Características */
 .feature {
-    background-color: #ffffff;
+    background-color: #f4f6f7;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 40px;
