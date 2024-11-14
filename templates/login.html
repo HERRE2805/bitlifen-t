@@ -103,6 +103,9 @@
 
 </head>
 <body>
+     <div class="bar-container">
+        {% include 'barra.html' %}
+    </div>
     <div class="wrapper">
         {% with messages = get_flashed_messages() %}
         {% if messages %}
