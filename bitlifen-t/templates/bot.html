@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuario.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div>
+        {% include 'barra.html' %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <section id="valores" class="my-5">
+        <div class="container mt-5">
+            <form action="/analizar" method="POST">
+            <h1 class="text-center mb-4">Datos Cardíacos en Tiempo Real</h1>
+            <div class="mb-4">
+                <label for="ritmoCardiaco" class="form-label">Ritmo Cardíaco (bpm):</label>
+                <input required type="number" name="ritmoCardiaco" id="ritmoCardiaco" class="form-control" placeholder="Ingresa el ritmo cardíaco">
+            </div>
+            <div class="mb-4">
+                <label for="oxigenoSangre" class="form-label">Oxígeno en Sangre (%):</label>
+                <input required type="number" name="oxigenoSangre" id="oxigenoSangre" class="form-control" placeholder="Ingresa el porcentaje de oxígeno">
+            </div>
+            <div class="mb-4">
+                <label for="oxigenoSangre" class="form-label">Presion Arterial(%):</label>
+                <input required type="number" name="presion" id="presion" class="form-control" placeholder="Ingresa su presion arterial">
+            </div>
+        
+            <button class="btn btn mb-2" style="background-color: #78B3CE;" type="submit">Analizar</button>
+           
+        </form>
+        <button class="btn btn mb-2" style="background-color: #78B3CE;" onclick="mostrarFormularioPeso()">Actualizar peso</button>
+        <button class="btn btn mb-2" style="background-color: #78B3CE;" onclick="mostrarFormularioEnfermedades()">Actualizar Enfermedades</button>
+
+            <section id="formulario-seccion" class="my-5"></section>
+        </div>
+    </section>
+    {% if analizado %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Resultado del Análisis</h2>
+        <p class="text-center">{{ predic }}</p>   
+    </div>
+    {% endif %}
+    
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Sistema de Prevención de Ataques Cardíacos</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+
+    <script>
+        function mostrarFormularioPeso() {
+            document.getElementById('formulario-seccion').innerHTML = `
+                <div class="mb-4">
+                    <label for="nuevoPeso" class="form-label">Ingresa tu peso (kg):</label>
+                    <input type="number" id="nuevoPeso" class="form-control" placeholder="Ingresa tu peso">
+                    <button class="btn btn mt-3" style="background-color: #78B3CE;" onclick="verificarPeso()">Guardar Peso</button>
+                </div>
+            `;
+        }
+
+        function mostrarFormularioEnfermedades() {
+            document.getElementById('formulario-seccion').innerHTML = `
+                <div class="mb-4">
+                    <label for="enfermedades" class="form-label">¿Tienes alguna enfermedad?</label>
+                    <select id="enfermedades" class="form-control" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="enfermedadesFamiliares" class="form-label">¿Tienes antecedentes familiares de enfermedades?</label>
+                    <select id="enfermedadesFamiliares" class="form-control" required>
+                        <option value="" disabled selected>Seleccionar</option>
+                        <option value="si">Sí</option>
+                        <option value="no">No</option>
+                    </select>
+                    <button type="submit" class="btn btn mt-3" style="background-color: #78B3CE;" onclick="verificarEnfermedades()">Guardar Enfermedades</button>
+                </div>
+            `;
+        }
+
+        function verificarPeso() {
+            const peso = document.getElementById('nuevoPeso').value;
+            if (!peso) {
+                alert('Por favor, ingresa tu peso.');
+            } 
+        }
+
+        function verificarEnfermedades() {
+            const enfermedades = document.getElementById('enfermedades').value;
+            const enfermedadesFamiliares = document.getElementById('enfermedadesFamiliares').value;
+            if (!enfermedades || !enfermedadesFamiliares) {
+                alert('Por favor, completa todos los campos.');
+            } 
+        }
+    </script>
+</body>
+</html>

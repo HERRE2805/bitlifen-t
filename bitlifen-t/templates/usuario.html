@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Usuario</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/usuario.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <div>
+        {% include 'barra.html' %}
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <section id="valores" class="my-5">
+        <div class="container mt-5">
+            <h1 class="text-center mb-4">Datos Cardíacos en Tiempo Real</h1>
+            <div class="mb-4">
+                <label for="ritmoCardiaco" class="form-label">Ritmo Cardíaco (bpm):</label>
+                <input type="number" id="ritmoCardiaco" class="form-control" placeholder="Ingresa el ritmo cardíaco">
+            </div>
+            <div class="mb-4">
+                <label for="oxigenoSangre" class="form-label">Oxígeno en Sangre (%):</label>
+                <input type="number" id="oxigenoSangre" class="form-control" placeholder="Ingresa el porcentaje de oxígeno">
+            </div>
+            <button class="btn btn mb-5" style="background-color: #78B3CE;" onclick="actualizarActividades()">Actualizar Actividades</button>
+
+            <h2 class="text-center mb-4">Clasificación de Actividades</h2>
+            <div class="table-responsive">
+                <table class="table table-light  table-striped text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">Actividad</th>
+                            <th scope="col">Ritmo Cardíaco (bpm)</th>
+                            <th scope="col">Oxígeno en Sangre (%)</th>
+                            <th scope="col">Clasificación</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaActividades">
+                        <tr>
+                            <td>Ejercicio Físico Intenso</td>
+                            <td>120</td>
+                            <td>85</td>
+                            <td id="ejercicioIntenso"><i class="bi bi-dash-circle text-warning-dark"></i> Requiere Evaluación</td>
+                        </tr>
+                        <tr>
+                            <td>Caminar al Aire Libre</td>
+                            <td>80</td>
+                            <td>95</td>
+                            <td id="caminarAireLibre"><i class="bi bi-check-circle text-success-dark"></i> Recomendado</td>
+                        </tr>
+                        <tr>
+                            <td>Trabajo Estresante</td>
+                            <td>110</td>
+                            <td>88</td>
+                            <td id="trabajoEstresante"><i class="bi bi-dash-circle text-warning-dark"></i> Requiere Evaluación</td>
+                        </tr>
+                        <tr>
+                            <td>Descansar y Relajarse</td>
+                            <td>60</td>
+                            <td>98</td>
+                            <td id="descansar"><i class="bi bi-check-circle text-success-dark"></i> Recomendado</td>
+                        </tr>
+                    </tbody>
+                    
+                </table>
+            </div>
+
+            <!-- Formulario para agregar nuevas actividades -->
+            <!-- Formulario para agregar nuevas actividades -->
+<section id="formulario-seccion" class="my-5">
+    <div class="container">
+        <div class="row">
+            <!-- Sección de información o diseño a la izquierda -->
+            <div class="col-md-6 bg text-white p-4 rounded-start" style="background-color: #78B3CE;">
+                <h2 class="mb-3" style="color: black ;text-align: justify;">Vive el dia dia tranquilo</h2>
+                <p style="color: black;">Luego de tu medicion podremos clasificar el nivel de riesgo de tus actividades almacenadas y clasificar el nivel de riesgo.</p>
+                <div class="decorativo">
+                    <img src="../static/media/CAR1.png" alt="Decorativo" class="img-fluid">
+                </div>
+            </div>
+            <!-- Sección del formulario a la derecha -->
+            <div class="col-md-6 bg-light p-4 rounded-end shadow">
+                <h3 class="text-dark mb-3">Añadir Nueva Actividad</h3>
+                <form onsubmit="agregarActividad(event)">
+                    <div class="mb-3">
+                        <label for="nuevaActividad" class="form-label">Nombre de la Actividad:</label>
+                        <input type="text" id="nuevaActividad" class="form-control" placeholder="Ejemplo: Meditación">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nuevoRitmo" class="form-label">Ritmo Cardíaco (bpm):</label>
+                        <input type="number" id="nuevoRitmo" class="form-control" placeholder="Ejemplo: 75">
+                    </div>
+                    <div class="mb-3">
+                        <label for="nuevoOxigeno" class="form-label">Oxígeno en Sangre (%):</label>
+                        <input type="number" id="nuevoOxigeno" class="form-control" placeholder="Ejemplo: 97">
+                    </div>
+                    <button type="submit" class="btn btn w-100 " style="background-color: #78B3CE;">Añadir Actividad</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+            
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2024 Sistema de Prevención de Ataques Cardíacos</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/user.js') }}"></script>
+</body>
+</html>

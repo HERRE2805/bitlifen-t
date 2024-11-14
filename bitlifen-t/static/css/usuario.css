@@ -1,0 +1,136 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa; /* Fondo suave */
+    color: #333;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+    color: #2c3e50; /* Colores oscuros y modernos */
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+/* Sección de Datos Cardíacos */
+#datos-cardiacos {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Configuración de Perfil */
+#configuracion-perfil {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #82b7f0;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #65b0ff;
+}
+
+/* Historial de Salud */
+#historial-salud {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding-top: 20px;
+}
+.text-success-dark {
+    color: #006400 !important; /* Verde oscuro */
+}
+
+.text-warning-dark {
+    color: #FF8C00 !important; /* Amarillo oscuro */
+}
+
+.text-danger-dark {
+    color: #8B0000 !important; /* Rojo oscuro */
+}
+
+#formulario-seccion {
+    background-color: #f8f9fa;
+}
+
+.bg-primary {
+    background-color: #86bdf5 !important; /* Azul más oscuro */
+}
+
+.text-white {
+    color: #fff;
+}
+
+.shadow {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.rounded-start {
+    border-radius: 15px 0 0 15px;
+}
+
+.rounded-end {
+    border-radius: 0 15px 15px 0;
+}
+
+.decorativo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+}

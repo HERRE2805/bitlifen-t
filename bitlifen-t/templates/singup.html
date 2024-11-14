@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitlifent</title>
+
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/indesstyle.css') }}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("../static/media/pulso.gif    ") ;
+            color: #fff;
+        }
+        .wrapper {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            border-radius: 10px;
+            padding: 30px 40px;
+        }
+        .wrapper h1 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .input-box {
+            width: 100%;
+            margin: 20px 0;
+        }
+        .input-box select, .input-box input {
+            width: 100%;
+            height: 50px;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 40px;
+            color: #fff;
+            font-size: 18px;
+        }
+        .input-box select::placeholder, .input-box input::placeholder {
+            color: #aaa;
+        }
+        .btn {
+            width: 100%;
+            height: 45px;
+            background: #fff;
+            border: none;
+            border-radius: 40px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        .recommendation {
+            margin-top: 30px;
+        }
+        .recommendation h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .input-box select {
+            -webkit-appearance: none;  /* Para Safari */
+            -moz-appearance: none;     /* Para Firefox */
+            appearance: none;          /* Estándar */}
+            .input-box input[type="number"] {
+                -webkit-appearance: none;  /* Para Safari */
+                -moz-appearance: textfield; /* Para Firefox */
+                appearance: textfield;      /* Estándar */
+            }
+
+.input-box input[type="number"]::-webkit-outer-spin-button,
+.input-box input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    </style>
+
+</head>
+<body>
+        <div class="wrapper">
+            <form action="/addusers" method="POST">
+                <h1>Registro</h1>
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for mensaje in messages %}
+                            <div class="alert alert-soft-warning" role="alert" id="success-alert">{{ mensaje }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre" id="nombre" name="nombre" required>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Apellido" id="apellido" name="apellido" required>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Correo" id="email" name="email" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Clave" id="clave" name="clave" required>
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Confirmar Clave" id="otraclave" name="otraclave" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Peso (kg)" id="peso" name="peso" required>
+                </div>
+                <div class="input-box">
+                    <input type="number" placeholder="Edad" id="edad" name="edad" required>
+                </div>
+                <div class="input-box">
+                    <select id="enfermedades" name="enfermedades" required>
+                        <option value="" disabled selected>¿Tiene enfermedades?</option>
+                        <option style="background:gray" value="si">Sí</option>
+                        <option style="background:gray" value="no">No</option>
+                    </select>
+                </div>
+                <div class="input-box">
+                    <select id="enfermedades_familiar" name="enfermedades_familiar" required>
+                        <option value="" disabled selected>¿Algún familiar tiene enfermedades?</option>
+                        <option style="background:gray" value="si">Sí</option>
+                        <option style="background:gray" value="no">No</option>
+                    </select>
+                </div>
+                <button class="btn" type="submit">Registrarse</button>
+            </form>
+            <a href="/login">
+                <button class="btn" type="button">Login</button>
+            </a>
+            <a href="/">
+                <button class="btn" type="button">Inicio</button>
+            </a>
+        </div>
+      
+
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+
+</html>
